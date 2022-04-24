@@ -1,44 +1,76 @@
-const timer = document.querySelector('timer')
-const startTimer = document.querySelector('#start')
-const stopTimer = document.querySelector('#stop')
-const resetTimer = document.querySelector('#reset')
+const time = document.querySelector('#time')
+const control = document.querySelector('#control')
+const reset = document.querySelector('#reset')
 
-let timerMinutes = document.querySelector('#minutes')
+let timeLeft = 600;
+let timerID = 1;
 
-let timerSeconds = document.querySelector('#seconds')
+start();
+stop();
+secondsConvertor(timeLeft);
 
-let secondsCounter = 60;
-let minutesCounter = 25;
 
-let timerID;
-
-startTimer.onclick = function() {
-    timerID = setInterval(function(){
-        secondsCounter--;
-        timerSeconds.innerText = secondsCounter;
-        timerMinutes.innerText = minutesCounter;
-    
-    
-        if(secondsCounter < 10){
-            timerSeconds.innerText = `0${secondsCounter}`
-        }
-
-        if(secondsCounter < 1){
-            minutesCounter--;
-            secondsCounter = 60
-        }
-    }, 1000)
+function buttonInterface() {
+    if(timerID === null){
+        control.innerHTML = 'Start';
+        control.classList.remove('stop')
+        control.classList.add('start')
+    } else {
+        control.innerHTML = 'Pause'
+        control.classList.remove('start')
+        control.classList.add('stop')
+    }
 }
 
-stopTimer.onclick = function() {
+function secondsConvertor(){
+    let minutes = Math.floor(timeLeft / 60);
+    let seconds = timeLeft % 60;
+    time.innerText = minutes.toString().padStart(2, "0") + ':' + seconds.toString().padStart(2, "0");
+}
+
+
+function start() { 
+
+    if (timeLeft === 0) return;
+
+    timerID = setInterval(() => {
+        timeLeft--;
+        secondsConvertor();
+
+        if(timeLeft === 0) {
+            stop();
+        }
+    }, 1000);
+
+    buttonInterface();
+
+}
+
+function stop() {
     clearInterval(timerID);
+
+    timerID = null;
+
+    buttonInterface();
 }
 
-resetTimer.onclick = function() {
-    secondsCounter = 60;
+control.addEventListener('click', () => {
+    if(timerID === null) {
+        start();
+    } else {
+        stop();
+        control.innerHTML = "Resume"
+        control.classList.add('resume')
+    }
+});
 
-    timerSeconds.innerText = '00';
-    timerMinutes.innerText = minutesCounter
+reset.addEventListener('click', () => {
+    const timeInput = prompt('Number of minutes:');
 
-    clearInterval(timerID)
-}
+    if(timeInput <= 60) {
+        stop();
+        timeLeft = timeInput * 60;
+        secondsConvertor();
+        control.innerHTML.classList.add('start')
+    }
+});
