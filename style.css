@@ -1,26 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 
+* {
+    margin:  0 auto;
+    box-sizing: border-box;
+}
+
 body {
     display: flex;
     margin: 0 auto;
     height: 100vh;
-    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(14,174,87,1) 0%, rgba(12,116,117,1) 90% );
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  #0eae57 0%, #0c7475 90% );
     font-family: 'Poppins', sans-serif;
 }
 
-section {
+.wrapper {
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
+    align-self: stretch;
     margin: auto;
+    padding-top: 3em;
+    padding-bottom: 3em;
     border-radius: 28px;
-    height: 80vh;
-    width: 70vw;
-    background-color: #FFEEEE;
+    height: 70vh;
+    width: 50vw;
+    background-color: #fff;
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.3);
 }
 
-.timer {
-    margin: auto;
-    font-size: 86px;
+.title {
+    font-size: 22px;
+}
+
+span {
+    /* margin: auto; */
+    /* justify-content: center; */
+    font-size: 96px;
     color: #222831;
     text-align: center;
 }
@@ -32,7 +47,7 @@ section {
 }
 
 button:not(:last-child) {
-    padding: auto;
+    margin-right: 15px;
 }
 
 button {
@@ -54,6 +69,7 @@ button:hover {
 }
 
 .start {
+
     background-color: #6BCB77;
 }
 
@@ -63,11 +79,11 @@ button:hover {
 
 .resume {
     padding: 1em;
-    background-color: #f9b153;
+    background-color: #6BCB77;
 }
 
 .resume:hover {
-    background-color: #ea9c36;
+    background-color: #57a762;
 }
 
 .stop {
@@ -84,4 +100,51 @@ button:hover {
 
 .reset:hover {
     background-color: #3585f5;
+}
+
+/* popup */
+
+.popup {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: auto;
+    font-size: 16px;
+    /* padding-top: 3em;
+    padding-bottom: 3em; */
+    border-radius: 28px;
+    height: 70vh;
+    width: 50vw;
+    background-color: #fff;
+}
+
+.popup span {
+    margin-bottom: 1em;
+    display: flex;
+    font-size: 16px;
+    flex-direction: column;
+}
+
+.popup_items {
+    margin: 0 2em 0 2em;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+
+.popup input {
+    outline: none;
+    background-color: #FFEEEE;
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    width: 12em;
+    font-size: 14px;
+    border-radius: 6px;
+    padding: 1em 2em;   
+    display: flex;
+}
+
+.none {
+    display: none;
 }
