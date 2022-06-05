@@ -116,6 +116,7 @@ close.addEventListener('click', () => {
 });
 
 save.addEventListener('click', () => {
+    cicles = 0
     click.play()
     wrapper.classList.remove('none');
     popup.classList.add('none');
@@ -126,6 +127,5 @@ save.addEventListener('click', () => {
     timeLeft = document.querySelector('#pomodoro').value * 60
     changeMode()
     stop()
-
 });
 
