@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Test Pomodoro</title>
+</head>
+<body>
+    <audio id="click" src="sounds/click.mp3"></audio>
+    <audio id="done" src="sounds/done.mp3"></audio>
+    <audio id="clock" src="sounds/clock.mp3"></audio>
+    <div class="wrapper" id="wrapper">
+        <div class="title" id="title">Stay Focused</div>
+        <div class="timer">
+            <span id="timer">timer</span>
+        </div>
+        <div class="control">
+            <button class="start" class="stop" id="control">Start</button>
+            <button class="reset" id="reset">Reset</button>
+        </div>
+    </div>
+    <div class="popup none" id="popup">
+        <p class="title">Time (Minutes)</p>
+        <div class="popup_items">
+            <div class="item">
+                <!-- <span>Pomodoro</span> -->
+                <span>Pomodoro</span>
+                <input type="number" name="Pomodoro" max="60"  id="pomodoro" value="25">
+            </div>
+            <div class="item">
+                <span>Short Break</span>
+                <input type="number"  max="60" id ="short" value="5">
+            </div>
+            <div class="item">
+                <span>Long Break</span>
+                <input type="number" max="60" id="long" value="10">
+            </div>
+        </div>
+        <div class="popup_buttons">
+            <button class="start" id="save">Save</button>
+            <button class="stop" id="close">Close</button>
+        </div>
+    </div>
+    <script src="./app.js"></script>
+</body>
+</html>
