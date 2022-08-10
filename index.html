@@ -1,48 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro</title>
+    <script src="https://kit.fontawesome.com/ff19e6b365.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
-    <title>Test Pomodoro</title>
 </head>
 <body>
-    <audio id="click" src="sounds/click.mp3"></audio>
-    <audio id="done" src="sounds/done.mp3"></audio>
-    <audio id="clock" src="sounds/clock.mp3"></audio>
-    <div class="wrapper" id="wrapper">
-        <div class="title" id="title">Stay Focused</div>
+    <div class="wrapper">
+        <span class="title">Title</span>
         <div class="timer">
-            <span id="timer">timer</span>
+            <span class="time"></span>
+            <div class="buttons">
+                <button class="start">Start</button>
+                <button class="reset" onclick="showSettings()">Reset</button>
+            </div>
         </div>
-        <div class="control">
-            <button class="start" class="stop" id="control">Start</button>
-            <button class="reset" id="reset">Reset</button>
-        </div>
+        <a href="https://github.com/talgatKuansyh" target="_blank">
+            <span class="link"><i class="fa-brands fa-github"></i>Designed by talgatKuanysh</span>
+        </a>
     </div>
-    <div class="popup none" id="popup">
-        <p class="title">Time (Minutes)</p>
-        <div class="popup_items">
-            <div class="item">
-                <!-- <span>Pomodoro</span> -->
-                <span>Pomodoro</span>
-                <input type="number" name="Pomodoro" max="60"  id="pomodoro" value="25">
+    <div class="settings-wrapper none">
+            <span class="settings-title">Time (Minutes)</span>
+            <div class="inputs">
+                <div class="input">
+                    <span>Focus</span>
+                    <input class="focus-time" type="number" min="0" value="20">
+                </div>
+                <div class="input">
+                        <span>Short break</span>
+                        <input class="short-break-time" type="number" min="0" value="5">
+                </div>
+                <div class="input">
+                        <span>Long break</span>
+                        <input class="long-break-time" type="number" min="0" value="10">
+                </div>
             </div>
-            <div class="item">
-                <span>Short Break</span>
-                <input type="number"  max="60" id ="short" value="5">
+            <div class="settings-buttons">
+                <button class="start" onclick="saveSettings()">Save</button>
+                 <button class="pause" onclick="showSettings()">Close</button>
             </div>
-            <div class="item">
-                <span>Long Break</span>
-                <input type="number" max="60" id="long" value="10">
-            </div>
-        </div>
-        <div class="popup_buttons">
-            <button class="start" id="save">Save</button>
-            <button class="stop" id="close">Close</button>
-        </div>
-    </div>
-    <script src="./app.js"></script>
+    </div>    
+    <script src="app.js"></script>
 </body>
 </html>
