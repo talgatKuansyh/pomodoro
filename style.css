@@ -104,7 +104,8 @@ a {
 }
 
 button {
-    padding: 1em 2em;
+    padding: 0.7em 1em;
+    font-size: 16px;
     min-width: 110px;
     border: none;
     outline: none;
