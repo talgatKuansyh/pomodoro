@@ -8,6 +8,7 @@
 
 body {
     margin: 0 auto;
+
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -76,12 +77,11 @@ body {
     font-size: 12px;  
     font-weight: 400;
     cursor: pointer;
-    color: rgb(180, 179, 179);
+    color: #d3d3d3;
 }
 
 .link:hover {
-    color: #262626;
-    text-decoration: underline;
+    color: #fff;
 }
 
 a {
@@ -174,15 +174,18 @@ input {
     
     .wrapper {
         width: 90vw;
-        height: 70vh;
+        height: 80vh;
     }
 
     .settings-wrapper {
-        justify-content: space-between;
         align-items: center;
         grid-template-rows: 1fr 6fr 1fr;
         width: 90vw;
-        height: 70vh;
+        height: 80vh;
+    }
+
+    .settings-title {
+        text-align: center;
     }
 
     .time {
@@ -193,17 +196,14 @@ input {
 
     .inputs {
         width: 100%;
-        display: grid;
         grid-template-columns: 1fr;
-        align-items: center;
-        justify-content: flex-start;
+        display: grid;
+        margin-bottom: 2em;
     }
 
     .input {
         width: 100%;
         display: grid;
-        align-items: center;
-        justify-content: center;
         gap: 1em;
         font-size: 14px;
         font-weight: 500;
